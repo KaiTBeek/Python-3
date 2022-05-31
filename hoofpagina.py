@@ -1,5 +1,6 @@
 getal = int(input(""))
+getal2 = str(input(""))
 def patat():
-    print("hello world" * getal)
+    print(getal2 * getal)
     
 patat()
