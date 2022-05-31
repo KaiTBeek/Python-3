@@ -1,6 +1,5 @@
-
+getal = int(input(""))
 def patat():
-    for i in range(1,11):
-        print(i * 5 )
+    print("hello world" * getal)
     
 patat()
