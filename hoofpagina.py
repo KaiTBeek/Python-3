@@ -1,4 +1,6 @@
 
-
-for i in range(1,11):
-    print(i * 5 )
+def patat():
+    for i in range(1,11):
+        print(i * 5 )
+    
+patat()
