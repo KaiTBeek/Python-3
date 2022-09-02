@@ -12,7 +12,7 @@
 
 import time
 j = 1
-producten = {"Brood": "€2", "Water": "€1", "Vlees": "€4", "Groente": "€4", "Fruit": "€2"}
+producten = {"Brood": "2", "Water": "1", "Vlees": "10", "Groente": "4", "Fruit": "2,50"}
 def menu():
     print("Hallo en welkom. Hier kunt u uw boodschappen doen.")
     time.sleep(3)
@@ -35,7 +35,7 @@ def menu():
         print("Nu kan je een product toevoegen.")
         time.sleep(1)
         toevoeging = input("Welke product wil je toevoegen? ")
-        toevoeging1 = input("Hoeveel kost het product? (met € aub) ")
+        toevoeging1 = input("Hoeveel kost het product? ")
         producten[toevoeging] = toevoeging1
     elif keuze == "3":
         print("Nu kan je een product verwijderen.")
@@ -43,11 +43,21 @@ def menu():
         verwijdering = input("Welke product moet verwijderd worden? ")
         del producten[verwijdering]
     elif keuze == "4":
-        print("Nu kun je het product of de prijs aanpassen. ")`
+        print("Nu kun je het product of de prijs aanpassen. ")
         time.sleep(1)
         vraagievraagie = input("wil je de prijs of een product of beide aanpassen? ")
-        if vraagievraagie = "Prijs":
-            welke = input("Van welk product wil je de prijs aanpassen")
+        if vraagievraagie == "Prijs":
+            welke = input("Van welk product wil je de prijs aanpassen? ")
+            if welke == "Brood":
+                broodinput = input("Wat wordt de nieuwe prijs?")
+                producten[2] = producten[broodinput]
+                del producten[2]
+            elif welke == "Water":
+            elif welke == "Vlees":
+            elif welke == "Groente":
+            elif welke == "Fruit":
+        else:
+            welke = input("Welk product wil je aan passen?")
 
     elif keuze == "5":
         
