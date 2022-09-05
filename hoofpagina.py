@@ -48,19 +48,23 @@ def menu():
         vraagievraagie = input("wil je de prijs of een product of beide aanpassen? ")
         if vraagievraagie == "Prijs":
             welke = input("Van welk product wil je de prijs aanpassen? ")
-            if welke == "Brood":
-                broodinput = input("Wat wordt de nieuwe prijs?")
-                producten[2] = producten[broodinput]
-                del producten[2]
-            elif welke == "Water":
-            elif welke == "Vlees":
-            elif welke == "Groente":
-            elif welke == "Fruit":
+            if welke == "Brood" or "brood":
+                broodinput = input("Wat wordt de nieuwe prijs? ")
+                producten["Brood"] = broodinput
+            elif welke == "Water" or "water":
+                waterinput1 = input("Wat wordt de nieuwe prijs? ")
+                producten["Water"] = waterinput1
+            elif welke == "Vlees" or "vlees":
+                vleesinput2 = input("Wat wordt de nieuwe prijs? ")
+                producten["Vlees"] = vleesinput2
+            elif welke == "Groente" or "groente":
+                groenteinput3 = input("Wat wordt de nieuwe prijs? ")
+                producten["Groente"] = groenteinput3
+            elif welke == "Fruit" or "fruit":
+                fruitinput4 = input("Wat wordt de nieuwe prijs? ")
+                producten["Fruit"] = fruitinput4
         else:
-            welke = input("Welk product wil je aan passen?")
-
-    elif keuze == "5":
-        
+            welke1 = input("Welk product wil je aan passen? ")   
 while j < 6:
     menu()
     doorgaan = input("Wil je doorgaan? ")
