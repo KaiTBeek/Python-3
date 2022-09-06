@@ -18,7 +18,7 @@ def menu():
     time.sleep(3)
     print("Je kan kiezen tussen 5 verschillende dingen.")
     time.sleep(3)
-    print("1. Laat alle producten zijn")
+    print("1. Laat alle producten zien")
     time.sleep(2)
     print("2. Producten toevoegen")
     time.sleep(2)
@@ -46,25 +46,26 @@ def menu():
         print("Nu kun je het product of de prijs aanpassen. ")
         time.sleep(1)
         vraagievraagie = input("wil je de prijs of een product of beide aanpassen? ")
-        if vraagievraagie == "Prijs":
+        if vraagievraagie == "Prijs" or vraagievraagie == "prijs":
             welke = input("Van welk product wil je de prijs aanpassen? ")
-            if welke == "Brood" or "brood":
+            if welke == "Brood" or welke == "brood":
                 broodinput = input("Wat wordt de nieuwe prijs? ")
                 producten["Brood"] = broodinput
-            elif welke == "Water" or "water":
+            elif welke == "Water" or welke == "water":
                 waterinput1 = input("Wat wordt de nieuwe prijs? ")
                 producten["Water"] = waterinput1
-            elif welke == "Vlees" or "vlees":
-                vleesinput2 = input("Wat wordt de nieuwe prijs? ")
-                producten["Vlees"] = vleesinput2
-            elif welke == "Groente" or "groente":
+            elif welke == "Vlees" or welke == "vlees":
+                vleesinput2 = input("Wat wordt de nieuwe prijs? van vlees ")
+                producten[welke] = vleesinput2
+            elif welke == "Groente" or welke == "groente":
                 groenteinput3 = input("Wat wordt de nieuwe prijs? ")
                 producten["Groente"] = groenteinput3
-            elif welke == "Fruit" or "fruit":
+            elif welke == "Fruit" or welke == "fruit":
                 fruitinput4 = input("Wat wordt de nieuwe prijs? ")
                 producten["Fruit"] = fruitinput4
-        else:
-            welke1 = input("Welk product wil je aan passen? ")   
+            else:
+                welke1 = input("Welk product wil je aan passen? ")
+                if welke1 "Brood" or welke1 "brood"   
 while j < 6:
     menu()
     doorgaan = input("Wil je doorgaan? ")
