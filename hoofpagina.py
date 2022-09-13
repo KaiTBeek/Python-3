@@ -13,22 +13,22 @@
 import time
 j = 1
 producten = {"Brood": "2", "Water": "1", "Vlees": "10", "Groente": "4", "Fruit": "2,50"}
+print("Hallo en welkom. Hier kunt u uw boodschappen doen.")
+time.sleep(3)
+print("Je kan kiezen tussen 5 verschillende dingen.")
+time.sleep(3)
 def menu():
-    print("Hallo en welkom. Hier kunt u uw boodschappen doen.")
-    time.sleep(3)
-    print("Je kan kiezen tussen 5 verschillende dingen.")
-    time.sleep(3)
     print("1. Laat alle producten zien")
-    time.sleep(2)
+    time.sleep(1)
     print("2. Producten toevoegen")
-    time.sleep(2)
+    time.sleep(1)
     print("3. Producten Verwijderen")
-    time.sleep(2)
+    time.sleep(1)
     print("4. Product of prijs aanpassen")
-    time.sleep(2)
+    time.sleep(1)
     print("5. De boodschappen doen")
-    time.sleep(2)
-    keuze = input("Welke van deze vijf keuzes wil je? ")
+    time.sleep(1)
+    keuze = input("Welk van deze vijf keuzes wil je? ")
     if keuze == "1":
         print(producten)
     elif keuze == "2":  
@@ -99,16 +99,20 @@ def menu():
                 prijs = input("Wat wordt de prijs van dit product? ")
                 producten[productgroente] = prijs
                 print(producten)
-            else:
+            elif welke1 == "Fruit" or welke1 =="fruit":
                 productfruit = input("Wat is het nieuwe product? ")
                 producten[productfruit] = producten["Fruit"]                    
                 del producten["Fruit"]
                 prijs = input("Wat wordt de prijs van dit product? ")
                 producten[productfruit] = prijs
                 print(producten)
+            else:
+                print("Dat product staat niet in de lijst!")
+    elif keuze == "5":  
+
 while j < 6:
     menu()
-    doorgaan = input("Wil je doorgaan? ")
+    doorgaan = input("Wil je doorgaan? (als je stopt blijft er niks opgeslagen) ")
     if doorgaan == "ja":
         j = j + 0
     elif doorgaan == "nee":
