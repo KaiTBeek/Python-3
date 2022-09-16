@@ -12,12 +12,13 @@
 
 import time
 j = 1
-producten = {"Brood": "2", "Water": "1", "Vlees": "10", "Groente": "4", "Fruit": "2,50"}
+producten = {"Brood": 2, "Water": 1, "Vlees": 1.50, "Groente": 4, "Fruit": 2.50}
 print("Hallo en welkom. Hier kunt u uw boodschappen doen.")
 time.sleep(3)
 print("Je kan kiezen tussen 5 verschillende dingen.")
 time.sleep(3)
 def menu():
+    kosten = 0
     print("1. Laat alle producten zien")
     time.sleep(1)
     print("2. Producten toevoegen")
@@ -35,7 +36,7 @@ def menu():
         print("Nu kan je een product toevoegen.")
         time.sleep(1)
         toevoeging = input("Welke product wil je toevoegen? ")
-        toevoeging1 = input("Hoeveel kost het product? ")
+        toevoeging1 = float(input("Hoeveel kost het product? "))
         producten[toevoeging] = toevoeging1
         print(producten)
     elif keuze == "3":
@@ -55,19 +56,19 @@ def menu():
             print(producten)
             welke = input("Van welk product wil je de prijs aanpassen? ")
             if welke == "Brood" or welke == "brood":
-                broodinput = input("Wat wordt de nieuwe prijs? ")
+                broodinput = float(input("Wat wordt de nieuwe prijs? "))
                 producten["Brood"] = broodinput
             elif welke == "Water" or welke == "water":
-                waterinput1 = input("Wat wordt de nieuwe prijs? ")
+                waterinput1 = float(input("Wat wordt de nieuwe prijs? "))
                 producten["Water"] = waterinput1
             elif welke == "Vlees" or welke == "vlees":
-                vleesinput2 = input("Wat wordt de nieuwe prijs? van vlees ")
+                vleesinput2 = float(input("Wat wordt de nieuwe prijs? van vlees "))
                 producten[welke] = vleesinput2
             elif welke == "Groente" or welke == "groente":
-                groenteinput3 = input("Wat wordt de nieuwe prijs? ")
+                groenteinput3 = float(input("Wat wordt de nieuwe prijs? "))
                 producten["Groente"] = groenteinput3
             elif welke == "Fruit" or welke == "fruit":
-                fruitinput4 = input("Wat wordt de nieuwe prijs? ")
+                fruitinput4 = float(input("Wat wordt de nieuwe prijs? "))
                 producten["Fruit"] = fruitinput4
         else:
             welke1 = input("Welk product wil je aan passen? ")
@@ -75,40 +76,52 @@ def menu():
                 productbrood = input("Wat is het nieuwe product? ")
                 producten[productbrood] = producten["Brood"]                    
                 del producten["Brood"]
-                prijs = input("Wat wordt de prijs van dit product? ")
+                prijs = float(input("Wat wordt de prijs van dit product? "))
                 producten[productbrood] = prijs
                 print(producten)
             elif welke1 == "Water" or welke1 == "water":
                 productwater = input("Wat is het nieuwe product? ")
                 producten[productbrood] = producten["Water"]                    
                 del producten["Water"]
-                prijs = input("Wat wordt de prijs van dit product? ")
+                prijs = float(input("Wat wordt de prijs van dit product? "))
                 producten[productwater] = prijs
                 print(producten)
             elif welke1 == "Vlees" or welke1 == "vlees":
                 productvlees = input("Wat is het nieuwe product? ")
                 producten[productvlees] = producten["Vlees"]                    
                 del producten["Vlees"]
-                prijs = input("Wat wordt de prijs van dit product? ")
+                prijs = float(input("Wat wordt de prijs van dit product? "))
                 producten[productvlees] = prijs
                 print(producten)
             elif welke1 == "Groente" or welke1 == "groente":
                 productgroente = input("Wat is het nieuwe product? ")
                 producten[productgroente] = producten["Groente"]                    
                 del producten["Groente"]
-                prijs = input("Wat wordt de prijs van dit product? ")
+                prijs = float(input("Wat wordt de prijs van dit product? "))
                 producten[productgroente] = prijs
                 print(producten)
             elif welke1 == "Fruit" or welke1 =="fruit":
                 productfruit = input("Wat is het nieuwe product? ")
                 producten[productfruit] = producten["Fruit"]                    
                 del producten["Fruit"]
-                prijs = input("Wat wordt de prijs van dit product? ")
+                prijs = float(input("Wat wordt de prijs van dit product? "))
                 producten[productfruit] = prijs
                 print(producten)
             else:
                 print("Dat product staat niet in de lijst!")
-    elif keuze == "5":  
+    elif keuze == "5":
+        time.sleep(1)
+        print("Hier kan u uw boodschappen doen! ")
+        for x in producten:
+            time.sleep(1)
+            boodschappen = input("Welke producten wil je toevoegen aan je lijst? (zeg 'stop' als je kaar bent) ")
+            if boodschappen == "stop" or boodschappen == "Stop":
+                print("dat wordt dan " + str(kosten) + " euro!")
+                time.sleep(1)
+                print("Dank voor uw boodschappen!")
+                time.sleep(1)
+                break
+            kosten += producten[boodschappen]
 
 while j < 6:
     menu()
