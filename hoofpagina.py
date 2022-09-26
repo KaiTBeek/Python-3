@@ -17,18 +17,6 @@ print("Hallo en welkom. Hier kunt u uw boodschappen doen.")
 time.sleep(3)
 print("Je kan kiezen tussen 5 verschillende keuzes.")
 time.sleep(3)
-def menu():
-    kosten = 0
-    print("1. Laat alle producten zien")
-    time.sleep(1)
-    print("2. Producten toevoegen")
-    time.sleep(1)
-    print("3. Producten Verwijderen")
-    time.sleep(1)
-    print("4. Product of prijs aanpassen")
-    time.sleep(1)
-    print("5. De boodschappen doen")
-    time.sleep(1)
 def inputverwerk():
     keuze = input("Welk van deze vijf keuzes wil je? ")
     if keuze == "1":
@@ -115,6 +103,7 @@ def inputverwerk():
         print("Hier kan u uw boodschappen doen! ")
         time.sleep(1)
         print(producten)
+        kosten = 0
         for x in producten:
             time.sleep(1)
             boodschappen = input("Welke producten wil je toevoegen aan je lijst? (zeg 'stop' als je kaar bent) ")
@@ -124,14 +113,31 @@ def inputverwerk():
                 print("Dank voor uw boodschappen!")
                 time.sleep(1)
                 break
-                kosten += producten[boodschappen]
+            kosten += producten[boodschappen]
+def menu():
+    kosten = 0
+    print("1. Laat alle producten zien")
+    time.sleep(1)
+    print("2. Producten toevoegen")
+    time.sleep(1)
+    print("3. Producten Verwijderen")
+    time.sleep(1)
+    print("4. Product of prijs aanpassen")
+    time.sleep(1)
+    print("5. De boodschappen doen")
+    time.sleep(1)
 
-while j < 6:
-    menu()
-    inputverwerk()
+def Resultaat():
+    global j
     doorgaan = input("Wil je doorgaan? (als je stopt blijft er niks opgeslagen) ")
     if doorgaan == "ja":
         j = j + 0
     elif doorgaan == "nee":
         j = j + 8
         print("Oke tot ziens!")
+        
+
+while j < 6:
+    menu()
+    inputverwerk()
+    Resultaat()
